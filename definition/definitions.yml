@@ -1,0 +1,13 @@
+Class:
+  Task:
+    MandatoryFields:
+      TaskID:
+      TaskName:
+      PercentComplete:
+
+    OptionalFields:
+      StartDate:
+      EndDate:
+      Duration:
+      ResourceID:
+      Dependencies:

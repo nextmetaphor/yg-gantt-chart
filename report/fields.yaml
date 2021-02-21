@@ -1,0 +1,13 @@
+SectionClass:
+  Class: Task
+  Fields:
+    - TaskID
+    - TaskName
+    - ResourceID
+    - StartDate
+    - EndDate
+    - Duration
+    - PercentComplete
+    - Dependencies
+  OrderFields:
+    - StartDate
