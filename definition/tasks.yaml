@@ -2,45 +2,49 @@ Class: Task
 Definitions:
   Research:
     Fields:
-      TaskID: Research
-      TaskName: Find sources
+      Name: Find sources
       StartDate: 01 Jan 2015
       EndDate: 05 Jan 2015
-      PercentComplete: 100
+      PercentComplete: "100"
 
   Write:
     Fields:
-      TaskID: Write
-      TaskName: Write paper
+      Name: Write paper
       EndDate: 09 Jan 2015
       Duration: "3"
-      PercentComplete: 25
-      Dependencies: Research,Outline
+      PercentComplete: "25"
+    References: [
+      {Class: "Task", ID: "Research", Relationship: "DEPENDS_ON"},
+      {Class: "Task", ID: "Outline", Relationship: "DEPENDS_ON"},
+    ]
 
   Cite:
     Fields:
-      TaskID: Cite
-      TaskName: Create bibliography
+      Name: Create bibliography
       EndDate: 07 Jan 2015
       Duration: "1"
-      PercentComplete: 20
-      Dependencies: Research
+      PercentComplete: "20"
+    References: [
+      {Class: "Task", ID: "Research", Relationship: "DEPENDS_ON"},
+    ]
 
   Complete:
     Fields:
-      TaskID: Complete
-      TaskName: Hand in paper
+      Name: Hand in paper
       EndDate: 10 Jan 2015
       Duration: "1"
-      PercentComplete: 0
-      Dependencies: Cite,Write
-
+      PercentComplete: "0"
+    References: [
+      {Class: "Task", ID: "Cite", Relationship: "DEPENDS_ON"},
+      {Class: "Task", ID: "Write", Relationship: "DEPENDS_ON"},
+    ]
 
   Outline:
     Fields:
-      TaskID: Outline
-      TaskName: Outline paper
+      Name: Outline paper
       EndDate: 06 Jan 2015
       Duration: "1"
-      PercentComplete: 100
-      Dependencies: Research
+      PercentComplete: "100"
+    References: [
+      {Class: "Task", ID: "Research", Relationship: "DEPENDS_ON"},
+    ]

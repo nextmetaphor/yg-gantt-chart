@@ -1,8 +1,7 @@
 SectionClass:
   Class: Task
   Fields:
-    - TaskID
-    - TaskName
+    - Name
     - ResourceID
     - StartDate
     - EndDate
@@ -11,3 +10,13 @@ SectionClass:
     - Dependencies
   OrderFields:
     - StartDate
+CompositeSections:
+  - SectionClass:
+      Class: Task
+      ClassAlias: DependantClass
+      Fields:
+        - ID
+        - Name
+      Relationship: DEPENDS_ON
+      OrderFields:
+        - Name

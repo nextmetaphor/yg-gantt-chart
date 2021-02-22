@@ -22,13 +22,25 @@
 
             data.addRows([
                 {{- range $task := . -}}
-                    {{- $taskID := index $task.Fields "Task.TaskID" -}}
-                    {{- $taskName := index $task.Fields "Task.TaskName" -}}
+                    {{- $taskID := index $task.ID -}}
+                    {{- $taskName := index $task.Fields "Task.Name" -}}
                     {{- $taskStartDate := index $task.Fields "Task.StartDate" -}}
                     {{- $taskEndDate := index $task.Fields "Task.EndDate" -}}
                     {{- $taskDuration := index $task.Fields "Task.Duration" -}}
                     {{- $taskPercentComplete := index $task.Fields "Task.PercentComplete" -}}
-                    {{- $taskDependencies := index $task.Fields "Task.Dependencies" -}}
+
+                    {{- $taskDependencies := "" -}}
+                    {{- range $key,$value := $task.CompositeSectionDefinitions -}}
+                        {{- if eq $key "DEPENDS_ON" -}}
+                            {{- range $index, $childSection := $value -}}
+                                {{- if $index -}}
+                                    {{$taskDependencies = printf "%s%s" $taskDependencies "," -}}
+                                {{- end -}}
+                                {{- $depTaskID := index $childSection.Fields "DependantClass.ID" -}}
+                                {{- $taskDependencies = printf "%s%s" $taskDependencies $depTaskID -}}
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
 
                     [
                         {{$taskID}},

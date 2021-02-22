@@ -1,8 +1,7 @@
 Class:
   Task:
     MandatoryFields:
-      TaskID:
-      TaskName:
+      Name:
       PercentComplete:
 
     OptionalFields:
