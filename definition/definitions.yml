@@ -1,6 +1,7 @@
 Class:
   Task:
     MandatoryFields:
+      Order:
       Name:
       PercentComplete:
 

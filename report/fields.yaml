@@ -1,6 +1,7 @@
 SectionClass:
   Class: Task
   Fields:
+    - Order
     - Name
     - ResourceID
     - StartDate
@@ -9,7 +10,7 @@ SectionClass:
     - PercentComplete
     - Dependencies
   OrderFields:
-    - StartDate
+    - Order
 CompositeSections:
   - SectionClass:
       Class: Task
@@ -17,6 +18,9 @@ CompositeSections:
       Fields:
         - ID
         - Name
+        - Order
       Relationship: DEPENDS_ON
+      RelationshipFrom: true
+      RelationshipTo: false
       OrderFields:
-        - Name
+        - Order

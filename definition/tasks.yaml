@@ -2,6 +2,7 @@ Class: Task
 Definitions:
   Research:
     Fields:
+      Order: "1"
       Name: Find sources
       StartDate: 01 Jan 2015
       EndDate: 05 Jan 2015
@@ -9,6 +10,7 @@ Definitions:
 
   Write:
     Fields:
+      Order: "2"
       Name: Write paper
       EndDate: 09 Jan 2015
       Duration: "3"
@@ -20,6 +22,7 @@ Definitions:
 
   Cite:
     Fields:
+      Order: "3"
       Name: Create bibliography
       EndDate: 07 Jan 2015
       Duration: "1"
@@ -30,6 +33,7 @@ Definitions:
 
   Complete:
     Fields:
+      Order: "4"
       Name: Hand in paper
       EndDate: 10 Jan 2015
       Duration: "1"
@@ -41,6 +45,7 @@ Definitions:
 
   Outline:
     Fields:
+      Order: "5"
       Name: Outline paper
       EndDate: 06 Jan 2015
       Duration: "1"
