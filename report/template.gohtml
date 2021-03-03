@@ -45,9 +45,9 @@
                     [
                         {{$taskID}},
                         {{$taskName}},
-                        ({{$taskStartDate}} === "" ? null : new Date({{$taskStartDate}})),
-                        ({{$taskEndDate}} === "" ? null : new Date({{$taskEndDate}})),
-                        ({{$taskDuration}} === "" ? null : daysToMilliseconds(parseInt({{$taskDuration}}))),
+                        ({{$taskStartDate}} == null ? null : new Date({{$taskStartDate}})),
+                        ({{$taskEndDate}} == null ? null : new Date({{$taskEndDate}})),
+                        ({{$taskDuration}} == null ? null : daysToMilliseconds(parseInt({{$taskDuration}}))),
                         parseInt({{$taskPercentComplete}}),
                         ({{$taskDependencies}} === "" ? null : {{$taskDependencies}})
                     ],
